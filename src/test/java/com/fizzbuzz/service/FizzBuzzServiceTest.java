@@ -1,6 +1,5 @@
 package com.fizzbuzz.service;
 
-import com.fizzbuzz.service.FizzBuzzService;
 import org.junit.Test;
 
 import static com.fizzbuzz.service.FizzBuzzService.BUZZ;
