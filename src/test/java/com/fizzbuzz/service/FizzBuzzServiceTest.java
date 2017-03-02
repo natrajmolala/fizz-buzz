@@ -1,5 +1,6 @@
 package com.fizzbuzz.service;
 
+import org.hamcrest.Matcher;
 import org.junit.Test;
 
 import static com.fizzbuzz.service.FizzBuzzService.BUZZ;
@@ -15,44 +16,36 @@ public class FizzBuzzServiceTest {
 
     @Test
     public void shouldReturnFizzWhenTheNumberDivisibleByThree() {
-        String result = service.call(21);
-
-        assertThat(FIZZ, is(result));
+        verifyResult(21, is(FIZZ));
     }
 
     @Test
     public void shouldNotReturnFizzWhenTheNumberNotDivisibleByThree() {
-        String result = service.call(22);
-
-        assertThat(FIZZ, not(result));
+        verifyResult(22, not(FIZZ));
     }
 
     @Test
     public void shouldReturnBuzzWhenTheNumberDivisibleByFive() {
-        String result = service.call(20);
-
-        assertThat(BUZZ, is(result));
+        verifyResult(20, is(BUZZ));
     }
 
     @Test
     public void shouldNotReturnBuzzWhenTheNumberNotDivisibleByFive() {
-        String result = service.call(22);
-
-        assertThat(BUZZ, not(result));
+        verifyResult(22, not(BUZZ));
     }
 
     @Test
     public void shouldReturnFizzBuzzWhenTheNumberDivisibleByThreeAndFive() {
-        String result = service.call(15);
-
-        assertThat(FIZZ_BUZZ, is(result));
+        verifyResult(15, is(FIZZ_BUZZ));
     }
 
     @Test
     public void shouldReturnInputAsStringWhenTheNumberNotDivisibleByThreeOrFive() {
-        String result = service.call(77);
+        verifyResult(77, is(String.valueOf(77)));
+    }
 
-        assertThat(77 + "", is(result));
+    private void verifyResult(int number, Matcher<String> matcher) {
+        assertThat(service.call(number), matcher);
     }
 
 }
