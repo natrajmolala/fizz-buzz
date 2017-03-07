@@ -1,6 +1,6 @@
 package com.fizzbuzz.controller;
 
-import com.fizzbuzz.service.FizzBuzzService;
+import com.fizzbuzz.service.FizzBuzz;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FizzBuzzController {
 
     @Autowired
-    private FizzBuzzService service;
+    private FizzBuzz service;
 
     @RequestMapping(value = "/fizzbuzz/{number}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody

@@ -3,16 +3,16 @@ package com.fizzbuzz.service;
 import org.hamcrest.Matcher;
 import org.junit.Test;
 
-import static com.fizzbuzz.service.FizzBuzzService.BUZZ;
-import static com.fizzbuzz.service.FizzBuzzService.FIZZ;
-import static com.fizzbuzz.service.FizzBuzzService.FIZZ_BUZZ;
+import static com.fizzbuzz.service.FizzBuzz.BUZZ;
+import static com.fizzbuzz.service.FizzBuzz.FIZZ;
+import static com.fizzbuzz.service.FizzBuzz.FIZZ_BUZZ;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class FizzBuzzServiceTest {
+public class FizzBuzzTest {
 
-    private FizzBuzzService service = new FizzBuzzService();
+    private FizzBuzz service = new FizzBuzz();
 
     @Test
     public void shouldReturnFizzWhenTheNumberDivisibleByThree() {
